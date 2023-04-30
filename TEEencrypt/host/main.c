@@ -138,7 +138,6 @@ int main(int argc, char* const* argv)
 			memcpy(op.params[0].tmpref.buffer, encrypted_text, 128);
 			memcpy(op.params[1].tmpref.buffer, &encrypted_key, 4);
 
-
 			res = TEEC_InvokeCommand(&sess, TA_TEEencrypt_CMD_DEC_VALUE, &op, &err_origin);
 			if (res != TEEC_SUCCESS){
 				errx(1, "TEEC_InvokeCommand failed with code 0x%x origin 0x%x",
